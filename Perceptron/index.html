@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perceptrón Simple Solver</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    <main class="container">
+        <header class="app-header">
+            <h1>Perceptrón <span class="gradient-text">Solver</span></h1>
+            <p>Visualiza y resuelve ejercicios de perceptrón simple paso a paso.</p>
+        </header>
+        <div class="grid-layout">
+            <!-- Configuration Panel -->
+            <section class="glass-card config-panel">
+                <h2><span class="icon">⚙️</span> Configuración Inicial</h2>
+                <div class="input-group">
+                    <label for="initW1">Peso Inicial w1</label>
+                    <input type="number" id="initW1" value="0" step="1">
+                </div>
+                <div class="input-group">
+                    <label for="initW2">Peso Inicial w2</label>
+                    <input type="number" id="initW2" value="0" step="1">
+                </div>
+                <div class="input-group">
+                    <label for="initTheta">Umbral Inicial (θ)</label>
+                    <input type="number" id="initTheta" value="0" step="1">
+                </div>
+            </section>
+            <!-- Data Input Panel -->
+            <section class="glass-card data-panel">
+                <div class="panel-header">
+                    <h2><span class="icon">📊</span> Patrones de Entrenamiento</h2>
+                </div>
+                <div class="table-container">
+                    <table id="dataTable">
+                        <thead>
+                            <tr>
+                                <th>x1</th>
+                                <th>x2</th>
+                                <th>Valor Deseado (y)</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Rows will be added here dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-actions">
+                    <button id="addRowBtn" class="btn btn-secondary">+ Agregar Patrón</button>
+                    <button id="trainBtn" class="btn btn-primary">🚀 Calcular Aprendizaje</button>
+                </div>
+            </section>
+        </div>
+        <!-- Results Section -->
+        <section id="resultsSection" class="results-section hidden">
+            <div class="glass-card summary-card">
+                <h2>Resultados del Entrenamiento</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-label">Estado</span>
+                        <span id="statusValue" class="stat-value">Convergió</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Épocas</span>
+                        <span id="epochsValue" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Pesos Finales</span>
+                        <span id="weightsValue" class="stat-value">w: []</span>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-card logs-card">
+                <h2>📝 Registro Paso a Paso</h2>
+                <div id="epochsContainer" class="epochs-container">
+                    <!-- Epoch cards will be added here dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+
+</html>
